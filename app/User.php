@@ -37,15 +37,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    //mutator changes the behavior
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = \bcrypt('password');
-    }
+    // //mutator changes the behavior
+    // public function setPasswordAttribute($password)
+    // {
+    //     $this->attributes['password'] = \bcrypt('password');
+    // }
 
-    //accessor
-    public function getNameAttribute($name)
-    {
-        return 'My name is: ' .\ucfirst($name);
-    }
+    // //accessor
+    // public function getNameAttribute($name)
+    // {
+    //     return 'My name is: ' .\ucfirst($name);
+    // }
 }

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +21,13 @@ Route::get('/', function () {
 });
 
 Route::get('/user', 'UserController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/upload', function (Request $request) {
+    $request->image->store('image', 'public');
+    return 'Uploaded';
+    // dd($request->hasFile('image'));
+});
