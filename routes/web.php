@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Http\Request;
 
 
 /*
@@ -15,6 +13,14 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Routing the todo file index,add,edit
+Route::get('/todos', 'TodoController@index');
+
+Route::get('/todos/create', 'TodoController@create');
+Route::post('/todos/create', 'TodoController@store');
+
+Route::get('todos/edit', 'TodoController@edit');
 
 Route::get('/', function () {
     return view('welcome');
