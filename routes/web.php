@@ -26,8 +26,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/upload', function (Request $request) {
-    $request->image->store('image', 'public');
-    return 'Uploaded';
-    // dd($request->hasFile('image'));
-});
+Route::post('/upload', 'UserController@uploadAvatar');
